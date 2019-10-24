@@ -1,0 +1,25 @@
+Issue in starting managed server in weblogic,
+It could be found that node manager is not reachable.
+
+In this scenario we should first enroll the node manager to the domain through WLST
+
+Go to the below location
+
+/middlewarehome/wl_server_12.1/server/bin
+
+setup the environment needed for WLST using the script setWLEnv.cmd
+open WLST in interactive mode using the command java weblogic.WLST
+
+connect('<USER_NAME>','PASSWORD','t3://localhost:9500')
+
+It should show Admin server connected successfully
+
+Now next step is to enroll the node manager to the domain using the below command
+
+nmEnroll('<DOMAIN_HOME>','<NODE_MANAGER_HOME>')
+
+note: In windows we need to use double slash ('\\') for the path
+
+Now exit the WLST using the command exit()
+
+Stop and Start node manager using stopNodeManager.cmd and startNodeManager.cmd
