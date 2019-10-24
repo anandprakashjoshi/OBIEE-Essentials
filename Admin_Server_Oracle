@@ -1,0 +1,15 @@
+oracle.security.jps.JpsException: JPS-00027: There was an internal error: java.sql.SQLRecoverableException: ORA-01033: ORACLE initialization or shutdown in progress
+When using pluggable database in oracle 12c+ versions with OBIEE, Admin server looks for the initilization
+or start up of the database.
+
+Even if the oracle database services are running in case its installed on windows,
+we need the below command to be executed to open the pluggable database.
+
+> sqlplus \ as sysdba
+> Enter user name and password for sys
+> once connected run the below
+> alter pluggable database all open;
+
+Now start the Admin server using the script 
+
+startWeblogic.cmd
