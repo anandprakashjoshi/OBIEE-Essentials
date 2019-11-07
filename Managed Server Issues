@@ -1,0 +1,20 @@
+1. Managed Server in an incompatible state
+
+Most of the time when we start the managed server(in my case its bi_server) from weblogic 12c console,
+we may encounter the following error
+
+"bi_server1 is in an incompatible state"
+
+One work around for this is we need to delete the managed_server.state file in the below location
+
+$MiddlewareHome\user_projects\domains\domain_name\servers\managed_server\data\nodemanager
+
+for me the path is 
+
+C:\Middleware\user_projects\domains\bi\servers\bi_server1\data\nodemanager
+
+and file name is
+
+bi_server1.state
+
+2.
